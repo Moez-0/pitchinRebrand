@@ -73,43 +73,39 @@ export default function Hero() {
       </div>
 
       {/* Curved black overlay at bottom to hide Spline watermark */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
-        {/* Neon primary color border on top of curve */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-primary shadow-[0_0_10px_2px_rgba(168,85,247,0.7)] z-30"></div>
-
+      <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none flex flex-col">
         {/* Main curve with neon border effect */}
         <svg
           viewBox="0 0 1440 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto relative"
+          className="w-full h-20 md:h-28 lg:h-36 drop-shadow-[0_-15px_25px_rgba(168,85,247,0.3)]"
           preserveAspectRatio="none"
         >
-          {/* Glow effect behind the curve */}
+          {/* Solid black background for the curve */}
           <path
-            d="M0 40L80 45C160 50 320 60 480 65C640 70 800 70 960 60C1120 50 1280 30 1360 20L1440 10V120H1360C1280 120 1120 120 960 120H800H640H480H320H160H80H0V40Z"
+            d="M0 40L80 45C160 50 320 60 480 65C640 70 800 70 960 60C1120 50 1280 30 1360 20L1440 10V120H0V40Z"
             fill="black"
           />
           {/* Neon top border on the curve itself */}
           <path
             d="M0 40L80 45C160 50 320 60 480 65C640 70 800 70 960 60C1120 50 1280 30 1360 20L1440 10"
-            stroke="primary"
-            strokeWidth="2"
+            stroke="currentColor"
+            strokeWidth="3"
             className="text-primary"
             style={{
               filter: 'drop-shadow(0 0 8px rgb(168,85,247))',
-              stroke: 'currentColor'
             }}
             fill="none"
           />
         </svg>
 
-        {/* Additional solid black bar for extra coverage */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-black"></div>
+        {/* Additional solid black bar for extra coverage below the SVG curve */}
+        <div className="w-full h-12 bg-black -mt-1"></div>
       </div>
 
-      {/* Bottom fade for smooth transition - adjusted to work with neon border */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/60 to-transparent z-15 pointer-events-none"></div>
+      {/* Bottom fade for smooth transition - adjusted to blend the neon glow softly into the background ahead of the curve */}
+      <div className="absolute bottom-6 left-0 right-0 h-48 bg-gradient-to-t from-primary/20 via-primary/5 to-transparent z-15 pointer-events-none"></div>
 
       {/* Additional top-to-bottom primary gradient overlay - very subtle at top, stronger at bottom */}
       <div className="absolute inset-0 z-2 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-primary/10"></div>

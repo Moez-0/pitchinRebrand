@@ -42,7 +42,7 @@ export default function Preloader() {
                             exit={{ y: "-100%", opacity: 0 }}
                         >
                             <Image
-                                src="/logo.svg"
+                                src="images/logo.svg"
                                 alt="Pitchin"
                                 width={180}
                                 height={60}
