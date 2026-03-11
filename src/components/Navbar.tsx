@@ -169,12 +169,12 @@ export default function Navbar() {
         {/* Desktop Services Dropdown */}
         <div
           ref={dropdownRef}
-          className={`absolute left-0 top-full mt-2 w-full bg-background/95 backdrop-blur-lg shadow-xl transition-all duration-300 ${servicesOpen
+          className={`absolute left-0 top-full mt-2 w-full transition-all duration-300 ${servicesOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-2 pointer-events-none"
             }`}
         >
-          <div className="max-w-6xl mx-auto py-8 lg:py-12 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto py-8 lg:py-12 px-4 sm:px-6 border border-white/10 bg-[#0b0b0b]/60 backdrop-blur-xl rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
               {serviceItems.map((service, index) => (
                 <Link
@@ -191,7 +191,7 @@ export default function Navbar() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="mt-6 lg:mt-8 pt-4 lg:pt-6 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <div className="mt-6 lg:mt-8 pt-4 lg:pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <p className="text-zinc-400 text-xs sm:text-sm">
                 Looking for something specific? We've got you covered.
               </p>
@@ -210,17 +210,18 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-lg transition-all duration-300 md:hidden ${mobileMenuOpen
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-all duration-300 md:hidden ${mobileMenuOpen
           ? "opacity-100 visible translate-x-0"
           : "opacity-0 invisible translate-x-full"
           }`}
         style={{ top: "80px" }}
       >
         <div className="h-full overflow-y-auto pb-20">
-          <div className="flex flex-col p-6 space-y-4">
+          <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mt-2">
+            <div className="flex flex-col p-6 space-y-4 border border-white/10 bg-[#0b0b0b]/60 backdrop-blur-xl rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
             {/* Mobile Menu Links */}
             {menuLinks.map((link) => (
-              <div key={link.name} className="border-b border-zinc-800 pb-2">
+              <div key={link.name} className="border-b border-white/10 pb-2">
                 {link.hasDropdown ? (
                   <div>
                     <button
@@ -255,7 +256,7 @@ export default function Navbar() {
                         ))}
                         <Link
                           href="/services"
-                          className="block text-primary hover:text-primary/80 transition-colors text-sm font-medium py-2 mt-2 border-t border-zinc-800 pt-3"
+                          className="block text-primary hover:text-primary/80 transition-colors text-sm font-medium py-2 mt-2 border-t border-white/10 pt-3"
                           onClick={() => {
                             setMobileMenuOpen(false);
                             setMobileServicesOpen(false);
@@ -286,6 +287,7 @@ export default function Navbar() {
             >
               Get in Touch
             </Link>
+            </div>
           </div>
         </div>
       </div>
