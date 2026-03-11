@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Privacy Policy | Pitchin",
     description: "Privacy policy detailing how Pitchin collects and protects your data.",
+    alternates: {
+        canonical: "/legal/privacy",
+    },
 };
 
 export default function PrivacyPage() {

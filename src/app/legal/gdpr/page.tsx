@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "GDPR Compliance | Pitchin",
     description: "Information regarding Pitchin's compliance with the General Data Protection Regulation.",
+    alternates: {
+        canonical: "/legal/gdpr",
+    },
 };
 
 export default function GDPRPage() {

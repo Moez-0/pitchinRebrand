@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import CaseStudies from "@/components/CaseStudies";
@@ -8,6 +8,15 @@ import WhyPitchin from "@/components/WhyPitchin";
 import Testimonials from "@/components/Testimonials";
 import DiversePortfolio from "@/components/DiversePortfolio";
 import FAQ from "@/components/FAQ";
+
+export const metadata: Metadata = {
+  title: "Pitchin | Build Fast, Scale Smart",
+  description:
+    "Software development and digital marketing agency for startups and enterprises. Build MVPs, scale products, and grow organic traffic.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (

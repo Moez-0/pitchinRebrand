@@ -8,6 +8,9 @@ import { User } from "lucide-react";
 export const metadata: Metadata = {
     title: "About Us | Pitchin",
     description: "Meet the Pitchin team — a remote-first collective of engineers, designers, and strategists building people-first software.",
+    alternates: {
+        canonical: "/about",
+    },
 };
 
 const team: TeamMember[] = [

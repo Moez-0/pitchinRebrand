@@ -8,6 +8,9 @@ import { JobListing } from "@/types";
 export const metadata: Metadata = {
     title: "Careers | Pitchin",
     description: "Join the Pitchin team. We're hiring talented engineers, designers, and product managers who want to shape the future of software development.",
+    alternates: {
+        canonical: "/careers",
+    },
 };
 
 const jobListings: JobListing[] = [

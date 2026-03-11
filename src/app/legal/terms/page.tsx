@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Terms & Conditions | Pitchin",
     description: "Terms and conditions for Pitchin software development services.",
+    alternates: {
+        canonical: "/legal/terms",
+    },
 };
 
 export default function TermsPage() {

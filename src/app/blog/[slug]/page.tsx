@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { blogPosts, getBlogPostBySlug } from "@/lib/blog-data";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { formatDate } from "@/lib/utils";
+import { absoluteUrl } from "@/lib/seo";
 import { User } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -25,6 +26,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${post.title} | Pitchin Blog`,
         description: post.excerpt,
+        alternates: {
+            canonical: `/blog/${post.slug}`,
+        },
+        openGraph: {
+            type: "article",
+            title: post.title,
+            description: post.excerpt,
+            url: absoluteUrl(`/blog/${post.slug}`),
+            publishedTime: post.date,
+            images: [
+                {
+                    url: post.coverImage,
+                    alt: post.title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.excerpt,
+            images: [post.coverImage],
+        },
     };
 }
 

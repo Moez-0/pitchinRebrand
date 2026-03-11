@@ -7,6 +7,9 @@ import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 export const metadata: Metadata = {
     title: "Contact Us | Pitchin",
     description: "Get in touch with Pitchin. Let's discuss your project and get you a free quote.",
+    alternates: {
+        canonical: "/contact",
+    },
 };
 
 const contactInfo = [

@@ -1,11 +1,11 @@
 // app/services/[slug]/page.tsx
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services, getServiceBySlug } from "@/lib/services-data";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import GridOverlay from "@/components/ui/GridOverlay";
+import { absoluteUrl } from "@/lib/seo";
 import { ChevronRight, CheckCircle2 } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -25,6 +25,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${service.title} ${service.subtitle} | Pitchin`,
         description: service.description,
+        alternates: {
+            canonical: `/services/${service.slug}`,
+        },
+        openGraph: {
+            type: "website",
+            title: `${service.title} ${service.subtitle}`,
+            description: service.description,
+            url: absoluteUrl(`/services/${service.slug}`),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${service.title} ${service.subtitle}`,
+            description: service.description,
+        },
     };
 }
 

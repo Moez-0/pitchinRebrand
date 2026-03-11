@@ -7,6 +7,7 @@ import { caseStudies, getCaseStudyBySlug } from "@/lib/case-studies-data";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import GridOverlay from "@/components/ui/GridOverlay";
 import ClientPdfButton from "./client-pdf-button";
+import { absoluteUrl } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return caseStudies.map((study) => ({
@@ -25,6 +26,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${study.company} Case Study | Pitchin`,
         description: study.tagline,
+        alternates: {
+            canonical: `/case-studies/${study.slug}`,
+        },
+        openGraph: {
+            type: "article",
+            title: `${study.company} Case Study`,
+            description: study.tagline,
+            url: absoluteUrl(`/case-studies/${study.slug}`),
+            images: [
+                {
+                    url: study.heroImage,
+                    alt: study.title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${study.company} Case Study`,
+            description: study.tagline,
+            images: [study.heroImage],
+        },
     };
 }
 

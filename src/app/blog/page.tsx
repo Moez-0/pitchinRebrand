@@ -11,6 +11,9 @@ import { User } from "lucide-react";
 export const metadata: Metadata = {
     title: "Blog | Pitchin",
     description: "Insights, guides, and opinions on software engineering, product design, and tech agency culture.",
+    alternates: {
+        canonical: "/blog",
+    },
 };
 
 export default function BlogListingPage() {

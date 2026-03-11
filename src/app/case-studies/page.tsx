@@ -9,6 +9,9 @@ import GridOverlay from "@/components/ui/GridOverlay";
 export const metadata: Metadata = {
     title: "Case Studies | Pitchin",
     description: "Explore our portfolio of successful software development projects across FinTech, EdTech, Healthcare, and E-commerce.",
+    alternates: {
+        canonical: "/case-studies",
+    },
 };
 
 export default function CaseStudiesListingPage() {

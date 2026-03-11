@@ -9,6 +9,9 @@ import { ChevronRight } from "lucide-react";
 export const metadata: Metadata = {
     title: "Services | Pitchin",
     description: "End-to-end software development services from MVP to enterprise scale. Staff augmentation, web development, mobile apps, and more.",
+    alternates: {
+        canonical: "/services",
+    },
 };
 
 export default function ServicesPage() {
