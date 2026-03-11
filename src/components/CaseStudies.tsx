@@ -1,10 +1,15 @@
 // components/CaseStudies.tsx
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies-data";
+import { useI18n } from "@/components/providers/I18nProvider";
+import { localizeCaseStudy } from "@/lib/i18n/case-studies";
 
 export default function CaseStudies() {
-  const featured = caseStudies.slice(0, 4);
+  const { t, locale } = useI18n();
+  const featured = caseStudies.slice(0, 4).map((study) => localizeCaseStudy(study, locale));
 
   return (
     <section id="case-studies" className="relative bg-black py-32 overflow-hidden">
@@ -19,20 +24,20 @@ export default function CaseStudies() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
             <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-3">
-              Our Work
+              {t.caseStudies.eyebrow}
             </p>
             <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4 tracking-tight">
-              Case Studies
+              {t.caseStudies.title}
             </h2>
             <p className="text-base text-zinc-400 font-normal max-w-xl">
-              Real results for real businesses. See how we&apos;ve helped our clients succeed.
+              {t.caseStudies.description}
             </p>
           </div>
           <Link
             href="/case-studies"
             className="hidden md:inline-flex items-center text-sm font-medium text-zinc-300 hover:text-primary transition-colors duration-300 mt-4 md:mt-0"
           >
-            View all cases
+            {t.caseStudies.viewAll}
             <span className="ml-2 text-xl">→</span>
           </Link>
         </div>
@@ -90,7 +95,7 @@ export default function CaseStudies() {
 
                 {/* Learn More */}
                 <div className="inline-flex items-center text-sm font-medium text-zinc-400 group-hover:text-primary transition-colors duration-300">
-                  Read case study
+                  {t.caseStudies.readCaseStudy}
                   <span className="ml-2 text-lg group-hover:ml-4 transition-all duration-300">→</span>
                 </div>
               </div>
@@ -110,7 +115,7 @@ export default function CaseStudies() {
             href="/case-studies"
             className="inline-flex items-center text-sm font-medium text-zinc-300 hover:text-primary transition-colors duration-300"
           >
-            View all case studies
+            {t.caseStudies.viewAllMobile}
             <span className="ml-2 text-xl">→</span>
           </Link>
         </div>

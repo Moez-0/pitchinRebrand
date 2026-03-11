@@ -1,8 +1,13 @@
 // components/Hero.tsx
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function Hero() {
+  const { t } = useI18n();
+
   return (
     <section className="relative min-h-screen bg-black overflow-hidden">
       {/* Grid Overlay - using your downloaded SVG */}
@@ -42,15 +47,14 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto">
           {/* Headings */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-            <span className="text-white">People-first</span>
+            <span className="text-white">{t.hero.titleFirst}</span>
             <br />
-            <span className="text-primary">Software development</span>
+            <span className="text-primary">{t.hero.titleSecond}</span>
           </h1>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-gray-300 mt-6 max-w-2xl mx-auto">
-            We help startups and enterprises build reliable and scalable
-            software together with your team.
+            {t.hero.description}
           </p>
 
           {/* Buttons */}
@@ -59,13 +63,13 @@ export default function Hero() {
               href="#services"
               className="px-6 py-3 bg-transparent border border-gray-700 text-white rounded-lg hover:bg-white/5 transition-colors text-sm font-medium"
             >
-              Our Services
+              {t.hero.servicesCta}
             </Link>
             <Link
               href="/contact"
               className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
             >
-              Get a free quote
+              {t.hero.quoteCta}
             </Link>
           </div>
 

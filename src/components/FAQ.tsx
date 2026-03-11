@@ -5,44 +5,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Plus, X } from "lucide-react";
-
-const faqs = [
-  {
-    question: "What services does Pitchin offer?",
-    answer: "Pitchin specializes in MVP Development, Software Outsourcing, and Staff Augmentation. We provide end-to-end software solutions tailored to your business needs, from initial concept to enterprise-scale deployment."
-  },
-  {
-    question: "What is Staff Augmentation?",
-    answer: "Staff Augmentation at Pitchin allows you to extend your in-house team by hiring dedicated talent for specific projects without the hassle of recruitment and onboarding. You get senior developers who integrate seamlessly into your existing workflow, scaling your team up or down as needed."
-  },
-  {
-    question: "How does the talent hiring process work?",
-    answer: "Pitchin assesses your needs through detailed discovery sessions, screens experts based on technical skills and cultural fit, and helps integrate them seamlessly into your team. We handle all HR, payroll, and administrative tasks while you focus on building your product."
-  },
-  {
-    question: "What industries do Pitchin specialize in?",
-    answer: "Pitchin has deep domain expertise in multiple industries including EdTech (education technology), FinTech (financial technology), RiskTech, Healthcare, E-commerce, and Enterprise SaaS solutions."
-  },
-  {
-    question: "What technologies does Pitchin specialize in?",
-    answer: "Pitchin works with a wide range of modern technologies including JavaScript/TypeScript, Python, Java, PHP, and specializes in frameworks such as React.js, Next.js, Vue.js, Node.js, and Laravel. Our tech stack is tailored to meet each project's specific requirements."
-  },
-  {
-    question: "What are Pitchin's engagement models?",
-    answer: "Pitchin offers flexible engagement models including hourly billing for short-term projects, fixed-price for well-defined scopes, and dedicated team models for long-term partnerships. We adapt to your project size, budget, and requirements."
-  },
-  {
-    question: "How can I start a project with Pitchin?",
-    answer: "Starting a project with Pitchin is simple: contact us via our website form or email, schedule a discovery call to discuss your vision, and we'll provide a tailored proposal within days. From there, we can begin with a pilot project or full-scale development."
-  },
-  {
-    question: "Do you offer ongoing support after launch?",
-    answer: "Yes, we provide comprehensive post-launch support including maintenance, bug fixes, performance optimization, and feature additions. Our team remains available to ensure your software continues to perform flawlessly as your business grows."
-  }
-];
+import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function FAQ() {
+  const { t } = useI18n();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const faqs = t.faq.items;
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -66,16 +34,16 @@ export default function FAQ() {
           <div className="lg:col-span-4">
             <div className="sticky top-32">
               <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4 tracking-tight">
-                Frequently Asked Questions
+                {t.faq.title}
               </h2>
               <p className="text-base text-zinc-400 font-normal mb-8 max-w-sm">
-                Didn't get an answer to your question?
+                {t.faq.description}
               </p>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border border-zinc-700 text-white hover:border-primary hover:text-primary transition-all duration-500 text-sm font-medium group"
               >
-                Get in touch now
+                {t.faq.cta}
                 <span className="text-lg group-hover:translate-x-2 transition-transform duration-300">→</span>
               </Link>
             </div>

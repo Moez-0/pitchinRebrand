@@ -1,30 +1,35 @@
 // components/Footer.tsx
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
-
-const footerLinks = {
-  discover: [
-    { name: "About Us", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "/careers" }
-  ],
-  resources: [
-    { name: "MVP Development", href: "/services/mvp-development" },
-    { name: "Staff Augmentation", href: "/services/staff-augmentation" },
-    { name: "Software Outsourcing", href: "/services/software-outsourcing" },
-    { name: "UI/UX Design", href: "/services/ui-ux-design" }
-  ],
-  legal: [
-    { name: "Terms & Conditions", href: "/legal/terms" },
-    { name: "Privacy Policy", href: "/legal/privacy" },
-    { name: "GDPR", href: "/legal/gdpr" }
-  ]
-};
+import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function Footer() {
+  const { t } = useI18n();
+
+  const footerLinks = {
+    discover: [
+      { name: t.nav.aboutUs, href: "/about" },
+      { name: t.nav.services, href: "/services" },
+      { name: t.nav.caseStudies, href: "/case-studies" },
+      { name: t.nav.blog, href: "/blog" },
+      { name: t.nav.careers, href: "/careers" }
+    ],
+    resources: [
+      { name: "MVP Development", href: "/services/mvp-development" },
+      { name: "Staff Augmentation", href: "/services/staff-augmentation" },
+      { name: "Software Outsourcing", href: "/services/software-outsourcing" },
+      { name: "UI/UX Design", href: "/services/ui-ux-design" }
+    ],
+    legal: [
+      { name: t.footer.termsConditions, href: "/legal/terms" },
+      { name: t.footer.privacyPolicy, href: "/legal/privacy" },
+      { name: "GDPR", href: "/legal/gdpr" }
+    ]
+  };
+
   return (
     <footer className="relative bg-black border-t border-zinc-800 overflow-hidden">
       {/* Grid Overlay */}
@@ -52,7 +57,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-sm">
-              People-first software development. We help startups and enterprises build reliable and scalable software together with your team.
+              {t.footer.brandDescription}
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -75,7 +80,7 @@ export default function Footer() {
           {/* Links Columns */}
           <div className="lg:col-span-2">
             <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-6">
-              Discover
+              {t.footer.discover}
             </h3>
             <ul className="space-y-4">
               {footerLinks.discover.map((link) => (
@@ -93,7 +98,7 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-6">
-              Resources
+              {t.footer.resources}
             </h3>
             <ul className="space-y-4">
               {footerLinks.resources.map((link) => (
@@ -111,7 +116,7 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-6">
-              Contact
+              {t.footer.contact}
             </h3>
             <ul className="space-y-4">
               <li>
@@ -132,7 +137,7 @@ export default function Footer() {
               </li>
               <li className="pt-4">
                 <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-4">
-                  Legal
+                  {t.footer.legal}
                 </h4>
                 <ul className="space-y-3">
                   {footerLinks.legal.map((link) => (
@@ -154,14 +159,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-600 text-xs">
-            © {new Date().getFullYear()} Pitchin. All rights reserved.
+            © {new Date().getFullYear()} Pitchin. {t.footer.allRightsReserved}
           </p>
           <div className="flex items-center gap-6">
             <Link href="/legal/terms" className="text-zinc-600 hover:text-primary text-xs transition-colors duration-300">
-              Terms
+              {t.footer.terms}
             </Link>
             <Link href="/legal/privacy" className="text-zinc-600 hover:text-primary text-xs transition-colors duration-300">
-              Privacy
+              {t.footer.privacy}
             </Link>
             <Link href="/legal/gdpr" className="text-zinc-600 hover:text-primary text-xs transition-colors duration-300">
               GDPR

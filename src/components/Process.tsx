@@ -6,39 +6,41 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Discovery",
-    description: "Join a meeting where we discover your requirements, business goals, and project vision through collaborative workshops.",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    number: "02",
-    title: "Proposed Solution",
-    description: "We work on your requirements and propose a detailed solution with technical architecture, timeline, and resource planning.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    number: "03",
-    title: "Project Kick-off",
-    description: "We gather the required talent, set up development environments, and transform the proposal into actionable sprint plans.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    number: "04",
-    title: "Ongoing Support",
-    description: "Benefit from comprehensive project management and continuous support throughout your engagement and beyond.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-  }
-];
+import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function Process() {
+  const { t } = useI18n();
   const sectionRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
   const ctaCardRef = useRef<HTMLDivElement>(null);
+
+  const processSteps = [
+    {
+      number: "01",
+      title: t.process.steps.discoveryTitle,
+      description: t.process.steps.discoveryDescription,
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      number: "02",
+      title: t.process.steps.proposedTitle,
+      description: t.process.steps.proposedDescription,
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      number: "03",
+      title: t.process.steps.kickoffTitle,
+      description: t.process.steps.kickoffDescription,
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      number: "04",
+      title: t.process.steps.supportTitle,
+      description: t.process.steps.supportDescription,
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+    }
+  ];
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -180,10 +182,10 @@ export default function Process() {
         {/* Section Header */}
         <div className="process-header mb-20">
           <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4 tracking-tight">
-            Our Process
+            {t.process.title}
           </h2>
           <p className="text-base text-zinc-400 font-normal max-w-xl">
-            Human-first product teams supporting you from MVP to enterprise scale.
+            {t.process.description}
           </p>
         </div>
 
@@ -276,21 +278,21 @@ export default function Process() {
               <div className="max-w-large mx-auto">
                 <div className="margin-bottom margin-small mb-4">
                   <h3 className="text-3xl md:text-4xl font-semibold text-white group-hover:text-primary transition-colors duration-500">
-                    Build with a team you can trust.
+                    {t.process.ctaTitle}
                   </h3>
                 </div>
                 <p className="text-size-medium text-zinc-400 text-lg">
-                  Human-first product teams supporting you from MVP to enterprise scale.
+                  {t.process.ctaDescription}
                 </p>
               </div>
             </div>
             <div className="margin-top margin-medium mt-8">
               <div className="button-group is-center flex justify-center">
                 <Link
-                  href="/contact-us"
+                  href="/contact"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/80 transition-all duration-500 text-base font-medium group/btn"
                 >
-                  Start a conversation
+                  {t.process.ctaButton}
                   <span className="text-xl group-hover/btn:translate-x-2 transition-transform duration-300">→</span>
                 </Link>
               </div>

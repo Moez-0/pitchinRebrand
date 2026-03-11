@@ -1,31 +1,45 @@
 // components/Testimonials.tsx
-import Image from "next/image";
+"use client";
 
-const testimonials = [
-  {
-    quote: "Pitchin didn't just deliver code—they became a true extension of our team. Their ability to understand our vision and translate it into scalable software was remarkable.",
-    author: "Jonas Schmidt",
-    role: "Founder, TechVision",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
-    company: "TechVision"
-  },
-  {
-    quote: "The team's dedication to quality and their proactive approach to problem-solving set them apart. They helped us launch our MVP in record time without compromising on quality.",
-    author: "Aneliya Ivanova",
-    role: "CEO, InnovateLabs",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
-    company: "InnovateLabs"
-  },
-  {
-    quote: "Working with Pitchin has been transformative for our business. Their expertise in staff augmentation helped us scale rapidly while maintaining exceptional code quality.",
-    author: "Marcus Chen",
-    role: "CTO, FinScale",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070&auto=format&fit=crop",
-    company: "FinScale"
-  }
-];
+import Image from "next/image";
+import { useI18n } from "@/components/providers/I18nProvider";
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
+}
 
 export default function Testimonials() {
+  const { t } = useI18n();
+
+  const testimonials = [
+    {
+      quote: t.testimonials.entries.rpsQuote,
+      author: "Yassine Trabelsi",
+      role: "Operations Manager, RPS Solar",
+      image: "",
+      company: "RPS Solar"
+    },
+    {
+      quote: t.testimonials.entries.educationQuote,
+      author: "Imen Ben Amor",
+      role: "Director, Réussite Plus",
+      image: "",
+      company: "Réussite Plus"
+    },
+    {
+      quote: t.testimonials.entries.clinicQuote,
+      author: "Dr. Ahmed Gharbi",
+      role: "Medical Director, Clinique Carthage",
+      image: "",
+      company: "Clinique Carthage"
+    }
+  ];
+
   return (
     <section className="relative bg-black py-32 overflow-hidden">
       {/* Grid Overlay */}
@@ -42,10 +56,10 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="mb-16">
           <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4 tracking-tight">
-            Client Testimonials
+            {t.testimonials.title}
           </h2>
           <p className="text-base text-zinc-400 font-normal max-w-xl">
-            What our partners say about working with us.
+            {t.testimonials.description}
           </p>
         </div>
 
@@ -72,13 +86,8 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-transparent group-hover:border-primary/30 transition-all duration-500">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.author}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full border-2 border-zinc-700 group-hover:border-primary/30 transition-all duration-500 bg-zinc-800 text-zinc-200 flex items-center justify-center text-sm font-semibold">
+                  {getInitials(testimonial.author)}
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-sm">{testimonial.author}</h4>
@@ -93,7 +102,13 @@ export default function Testimonials() {
         {/* Stats Line */}
         <div className="mt-16 text-center border-t border-zinc-800 pt-8">
           <p className="text-sm text-zinc-400">
-            Trusted by <span className="text-primary font-medium">10+</span> companies worldwide
+            {t.testimonials.trustedBy.includes("20+") ? (
+              <>
+                {t.testimonials.trustedBy.split("20+")[0]}
+                <span className="text-primary font-medium">20+</span>
+                {t.testimonials.trustedBy.split("20+")[1]}
+              </>
+            ) : t.testimonials.trustedBy}
           </p>
         </div>
       </div>

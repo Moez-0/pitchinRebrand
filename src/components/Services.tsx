@@ -1,31 +1,36 @@
 // components/Services.tsx
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-
-const services = [
-  {
-    title: "MVP",
-    subtitle: "Development",
-    description: "Build scalable, custom Minimum Viable Products that are accessible from any location with an internet connection.",
-    href: "/services/mvp-development"
-  },
-  {
-    title: "Software",
-    subtitle: "Outsourcing",
-    description: "From definition and design, to development and testing, we provide end-to-end software outsourcing when you don't have the capacity or expertise in-house.",
-    href: "/services/software-outsourcing"
-  },
-  {
-    title: "Staff",
-    subtitle: "Augmentation",
-    description: "Augment your tech teams with our developers, adding the expertise you need without the long-term commitment.",
-    href: "/services/staff-augmentation"
-  }
-];
+import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function Services() {
+  const { t } = useI18n();
+
+  const services = [
+    {
+      title: "MVP",
+      subtitle: "Development",
+      description: t.services.items.mvpDescription,
+      href: "/services/mvp-development"
+    },
+    {
+      title: "Software",
+      subtitle: "Outsourcing",
+      description: t.services.items.outsourcingDescription,
+      href: "/services/software-outsourcing"
+    },
+    {
+      title: "Staff",
+      subtitle: "Augmentation",
+      description: t.services.items.augmentationDescription,
+      href: "/services/staff-augmentation"
+    }
+  ];
+
   return (
-    <section className="relative bg-black py-32 overflow-hidden">
+    <section id="services" className="relative bg-black py-32 overflow-hidden">
       {/* Grid Overlay - subtle luxury texture */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
         <Image 
@@ -41,10 +46,10 @@ export default function Services() {
         {/* Section Header - bolder */}
         <div className="mb-20">
           <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4 tracking-tight">
-            Our Services
+            {t.services.title}
           </h2>
           <p className="text-base text-zinc-400 font-normal max-w-xl">
-            Get software development services, built around your needs:
+            {t.services.description}
           </p>
         </div>
 
@@ -75,7 +80,7 @@ export default function Services() {
                 href={service.href}
                 className="inline-flex items-center text-sm font-medium text-zinc-300 hover:text-primary transition-colors duration-300 tracking-wide"
               >
-                Explore
+                {t.services.explore}
                 <span className="ml-2 text-xl group-hover:ml-4 transition-all duration-300">→</span>
               </Link>
 
@@ -88,13 +93,13 @@ export default function Services() {
         {/* Refined bottom CTA */}
         <div className="mt-32 text-center">
           <p className="text-sm text-zinc-500 tracking-wide uppercase mb-4">
-            Looking for something specific?
+            {t.services.lookingSpecific}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-zinc-700 text-white hover:border-primary hover:text-primary transition-all duration-500 text-base font-medium"
           >
-            Discuss your project
+            {t.services.discussProject}
             <span className="text-xl font-normal">→</span>
           </Link>
         </div>

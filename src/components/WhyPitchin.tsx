@@ -1,40 +1,37 @@
 // components/WhyPitchin.tsx
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
-
-const metrics = [
-  {
-    value: "98%",
-    label: "Client Satisfaction",
-    description: "Based on post-project surveys"
-  },
-  {
-    value: "10+",
-    label: "Projects Delivered",
-    description: "Across 3 countries"
-  },
-  {
-    value: "8",
-    label: "Long-term Partners",
-    description: "Clients who continue collaborating"
-  },
-  {
-    value: "3x",
-    label: "Faster Time-to-Market",
-    description: "Compared to in-house development"
-  }
-];
-
-const growthData = [
-  { month: "Jan", growth: 40 },
-  { month: "Feb", growth: 55 },
-  { month: "Mar", growth: 48 },
-  { month: "Apr", growth: 62 },
-  { month: "May", growth: 78 },
-  { month: "Jun", growth: 85 }
-];
+import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function WhyPitchin() {
+  const { t } = useI18n();
+
+  const metrics = [
+    {
+      value: "98%",
+      label: t.whyPitchin.metrics.satisfactionLabel,
+      description: t.whyPitchin.metrics.satisfactionDescription
+    },
+    {
+      value: "10+",
+      label: t.whyPitchin.metrics.projectsLabel,
+      description: t.whyPitchin.metrics.projectsDescription
+    },
+    {
+      value: "8",
+      label: t.whyPitchin.metrics.partnersLabel,
+      description: t.whyPitchin.metrics.partnersDescription
+    },
+    {
+      value: "3x",
+      label: t.whyPitchin.metrics.speedLabel,
+      description: t.whyPitchin.metrics.speedDescription
+    }
+  ];
+
+  const growthData = t.whyPitchin.months.map((month, index) => ({ month, growth: [40, 55, 48, 62, 78, 85][index] }));
+
   return (
     <section className="relative bg-black py-32 overflow-hidden">
       {/* Grid Overlay */}
@@ -51,10 +48,10 @@ export default function WhyPitchin() {
         {/* Section Header */}
         <div className="mb-16">
           <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4 tracking-tight">
-            Why Pitchin
+            {t.whyPitchin.title}
           </h2>
           <p className="text-base text-zinc-400 font-normal max-w-xl">
-            Data-driven results that speak for themselves.
+            {t.whyPitchin.description}
           </p>
         </div>
 
@@ -86,7 +83,7 @@ export default function WhyPitchin() {
           <div className="absolute bottom-0 left-0 w-0 h-0 border-b-2 border-l-2 border-transparent group-hover:border-primary/30 group-hover:w-12 group-hover:h-12 transition-all duration-500"></div>
           <div className="absolute bottom-0 right-0 w-0 h-0 border-b-2 border-r-2 border-transparent group-hover:border-primary/30 group-hover:w-12 group-hover:h-12 transition-all duration-500"></div>
 
-          <h3 className="text-xl font-semibold text-white mb-6">Client Growth Trajectory</h3>
+          <h3 className="text-xl font-semibold text-white mb-6">{t.whyPitchin.growthTitle}</h3>
 
           {/* Simple Bar Chart */}
           <div className="flex items-end justify-between h-64 gap-2">
@@ -109,7 +106,12 @@ export default function WhyPitchin() {
           </div>
 
           <div className="mt-6 text-sm text-zinc-400 text-center border-t border-zinc-800 pt-4">
-            <span className="text-primary font-medium">+50%</span> average client growth within 6 months
+            {t.whyPitchin.growthCaption.includes("+50%") ? (
+              <>
+                <span className="text-primary font-medium">+50%</span>{" "}
+                {t.whyPitchin.growthCaption.replace("+50% ", "")}
+              </>
+            ) : t.whyPitchin.growthCaption}
           </div>
         </div>
       </div>

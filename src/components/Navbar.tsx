@@ -5,8 +5,11 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function Navbar() {
+  const { t } = useI18n();
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -15,20 +18,20 @@ export default function Navbar() {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const menuLinks = [
-    { name: "Services", href: "/services", hasDropdown: true },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "About Us", href: "/about" },
-    { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "/careers" },
+    { name: t.nav.services, href: "/services", hasDropdown: true },
+    { name: t.nav.caseStudies, href: "/case-studies" },
+    { name: t.nav.aboutUs, href: "/about" },
+    { name: t.nav.blog, href: "/blog" },
+    { name: t.nav.careers, href: "/careers" },
   ];
 
   const serviceItems = [
-    { name: "Web Development", href: "/services/web-development" },
-    { name: "Mobile Development", href: "/services/mobile-development" },
-    { name: "Digital Marketing", href: "/services/digital-marketing" },
-    { name: "Branding", href: "/services/branding" },
-    { name: "UI/UX Design", href: "/services/ui-ux-design" },
-    { name: "Cloud Services", href: "/services/cloud-services" },
+    { name: t.nav.serviceItems.webDevelopment, href: "/services/web-development" },
+    { name: t.nav.serviceItems.mobileDevelopment, href: "/services/mobile-development" },
+    { name: t.nav.serviceItems.digitalMarketing, href: "/services/digital-marketing" },
+    { name: t.nav.serviceItems.branding, href: "/services/branding" },
+    { name: t.nav.serviceItems.uiuxDesign, href: "/services/ui-ux-design" },
+    { name: t.nav.serviceItems.cloudServices, href: "/services/cloud-services" },
   ];
 
   // Handle scroll effect
@@ -147,13 +150,15 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop Get in Touch Button */}
-          <Link
-            href="/contact"
-            className="hidden md:block bg-primary text-white px-6 py-2.5 rounded-xl hover:bg-primary/90 transition-colors text-sm font-medium flex-shrink-0"
-          >
-            Get in Touch
-          </Link>
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+            <LanguageSwitcher />
+            <Link
+              href="/contact"
+              className="bg-primary text-white px-6 py-2.5 rounded-xl hover:bg-primary/90 transition-colors text-sm font-medium"
+            >
+              {t.nav.getInTouch}
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -193,14 +198,14 @@ export default function Navbar() {
             {/* Bottom CTA */}
               <div className="mt-6 lg:mt-8 pt-4 lg:pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <p className="text-zinc-400 text-xs sm:text-sm">
-                Looking for something specific? We've got you covered.
+                {t.nav.lookingSpecific}
               </p>
               <Link
                 href="/services"
                 className="text-primary hover:text-primary/80 text-sm font-medium transition-colors"
                 onClick={() => setServicesOpen(false)}
               >
-                View All Services →
+                {t.nav.viewAllServices} →
               </Link>
             </div>
           </div>
@@ -262,7 +267,7 @@ export default function Navbar() {
                             setMobileServicesOpen(false);
                           }}
                         >
-                          View All Services →
+                          {t.nav.viewAllServices} →
                         </Link>
                       </div>
                     </div>
@@ -279,13 +284,17 @@ export default function Navbar() {
               </div>
             ))}
 
+            <div className="pt-2">
+              <LanguageSwitcher />
+            </div>
+
             {/* Mobile Get in Touch Button */}
             <Link
               href="/contact"
               className="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm font-medium text-center mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Get in Touch
+              {t.nav.getInTouch}
             </Link>
             </div>
           </div>

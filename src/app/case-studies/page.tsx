@@ -5,6 +5,8 @@ import Link from "next/link";
 import { caseStudies } from "@/lib/case-studies-data";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GridOverlay from "@/components/ui/GridOverlay";
+import { getServerDictionary } from "@/lib/i18n/server";
+import { localizeCaseStudy } from "@/lib/i18n/case-studies";
 
 export const metadata: Metadata = {
     title: "Case Studies | Pitchin",
@@ -14,7 +16,10 @@ export const metadata: Metadata = {
     },
 };
 
-export default function CaseStudiesListingPage() {
+export default async function CaseStudiesListingPage() {
+    const { locale, t } = await getServerDictionary();
+    const localizedStudies = caseStudies.map((study) => localizeCaseStudy(study, locale));
+
     return (
         <div className="bg-black min-h-screen">
             {/* Hero */}
@@ -22,9 +27,9 @@ export default function CaseStudiesListingPage() {
                 <GridOverlay opacity={10} />
                 <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <SectionHeader
-                        eyebrow="Portfolio"
-                        title="Work that makes an impact"
-                        description="From early-stage startups to established enterprises, we build software that drives real business results."
+                        eyebrow={locale === "fr" ? "Portfolio" : "Portfolio"}
+                        title={locale === "fr" ? "Des projets qui créent un vrai impact" : "Work that makes an impact"}
+                        description={locale === "fr" ? "Des startups aux entreprises établies, nous concevons des produits logiciels qui génèrent des résultats concrets." : "From early-stage startups to established enterprises, we build software that drives real business results."}
                     />
                 </div>
             </section>
@@ -33,7 +38,7 @@ export default function CaseStudiesListingPage() {
             <section className="relative pb-32">
                 <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                        {caseStudies.map((study, index) => (
+                        {localizedStudies.map((study, index) => (
                             <Link
                                 key={index}
                                 href={`/case-studies/${study.slug}`}
@@ -89,7 +94,7 @@ export default function CaseStudiesListingPage() {
                                     </div>
 
                                     <div className="inline-flex items-center text-sm font-medium text-zinc-400 group-hover:text-primary transition-colors duration-300">
-                                        Read full case study
+                                        {t.caseStudies.readCaseStudy}
                                         <span className="ml-2 text-lg group-hover:ml-4 transition-all duration-300">→</span>
                                     </div>
                                 </div>

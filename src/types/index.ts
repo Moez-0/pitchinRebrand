@@ -15,6 +15,18 @@ export interface CaseStudy {
   technologies: string[];
   testimonial?: { quote: string; author: string; role: string };
   gallery?: string[];
+  translations?: {
+    fr?: {
+      tagline?: string;
+      category?: string;
+      title?: string;
+      challenge?: string;
+      solution?: string;
+      results?: string;
+      metricLabels?: string[];
+      testimonial?: { quote?: string; role?: string };
+    };
+  };
 }
 
 export interface Service {

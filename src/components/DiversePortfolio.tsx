@@ -1,8 +1,13 @@
 // components/DiversePortfolio.tsx
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function DiversePortfolio() {
+  const { t } = useI18n();
+
   return (
     <section className="relative bg-black py-32 overflow-hidden">
       {/* Grid Overlay */}
@@ -19,10 +24,10 @@ export default function DiversePortfolio() {
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4 tracking-tight">
-            Diverse Portfolio
+            {t.portfolio.title}
           </h2>
           <p className="text-base text-zinc-400 font-normal max-w-2xl mx-auto">
-            Partnering with innovative companies across the globe, from startups to enterprises.
+            {t.portfolio.description}
           </p>
         </div>
       </div>
@@ -56,13 +61,13 @@ export default function DiversePortfolio() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mt-16">
           <p className="text-sm text-zinc-500 tracking-wide uppercase mb-4">
-            Join our global clientele
+            {t.portfolio.ctaLead}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-zinc-700 text-white hover:border-primary hover:text-primary transition-all duration-500 text-base font-medium group"
           >
-            Start your journey
+            {t.portfolio.ctaButton}
             <span className="text-xl group-hover:translate-x-2 transition-transform duration-300">→</span>
           </Link>
         </div>

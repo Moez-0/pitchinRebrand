@@ -4,6 +4,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
+import { I18nProvider } from "@/components/providers/I18nProvider";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 import "./globals.css";
 
@@ -84,12 +85,14 @@ export default function RootLayout({
         />
       </head>
       <body className={`${jakarta.variable} antialiased bg-black`}>
-        <Preloader />
-        <Navbar />
-        <main className="pt-20"> {/* Add padding-top to account for fixed navbar */}
-          {children}
-        </main>
-        <Footer />
+        <I18nProvider>
+          <Preloader />
+          <Navbar />
+          <main className="pt-20">
+            {children}
+          </main>
+          <Footer />
+        </I18nProvider>
       </body>
     </html>
   );
