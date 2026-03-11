@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/*"
+  to = "https://pitchin.mobi/:splat"
+  status = 301
+  force = true
+  conditions = {Host = ["www.pitchin.mobi"]}
