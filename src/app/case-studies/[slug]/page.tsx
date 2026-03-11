@@ -52,7 +52,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                     <GridOverlay opacity={10} />
                 </div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                         <Breadcrumb
                             items={[
@@ -92,7 +92,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
             {/* Content */}
             <section className="py-20">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
                         <div className="lg:col-span-8 space-y-16">

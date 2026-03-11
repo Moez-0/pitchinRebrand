@@ -19,7 +19,7 @@ export default function ServicesPage() {
                 <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
                     <Image src="/images/grid.svg" alt="" fill className="object-cover" />
                 </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <SectionHeader
                         eyebrow="Our Expertise"
                         title="Services built around your needs"
@@ -30,7 +30,7 @@ export default function ServicesPage() {
 
             {/* Services Grid */}
             <section className="relative pb-32">
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, i) => (
                             <div

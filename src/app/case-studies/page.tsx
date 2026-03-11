@@ -17,7 +17,7 @@ export default function CaseStudiesListingPage() {
             {/* Hero */}
             <section className="relative py-28 lg:py-36 overflow-hidden">
                 <GridOverlay opacity={10} />
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <SectionHeader
                         eyebrow="Portfolio"
                         title="Work that makes an impact"
@@ -28,7 +28,7 @@ export default function CaseStudiesListingPage() {
 
             {/* Grid */}
             <section className="relative pb-32">
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                         {caseStudies.map((study, index) => (
                             <Link

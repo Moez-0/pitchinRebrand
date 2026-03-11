@@ -102,13 +102,12 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className={`w-full fixed top-0 z-50 h-20 flex items-center transition-all duration-300 ${scrolled
-          ? 'bg-black/80 backdrop-blur-lg border-b border-zinc-800/50'
-          : 'bg-black border-b border-zinc-800'
-          }`}
-      >
-        <div className="max-w-7xl mx-auto flex items-center justify-between py-2 px-4 sm:px-6 w-full">
+      <nav className="fixed top-4 left-0 right-0 z-50">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header
+            className={`nav-floating border border-white/10 bg-[#0b0b0b]/60 backdrop-blur-xl rounded-2xl transition-all duration-300 ${scrolled ? 'shadow-[0_10px_40px_rgba(0,0,0,0.35)]' : ''}`}
+          >
+        <div className="flex h-16 items-center justify-between px-4 sm:px-6 w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <Image
@@ -165,16 +164,17 @@ export default function Navbar() {
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+          </header>
 
         {/* Desktop Services Dropdown */}
         <div
           ref={dropdownRef}
-          className={`absolute left-0 top-20 w-full bg-background/95 backdrop-blur-lg shadow-xl transition-all duration-300 ${servicesOpen
+          className={`absolute left-0 top-full mt-2 w-full bg-background/95 backdrop-blur-lg shadow-xl transition-all duration-300 ${servicesOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-2 pointer-events-none"
             }`}
         >
-          <div className="max-w-7xl mx-auto py-8 lg:py-12 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto py-8 lg:py-12 px-4 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
               {serviceItems.map((service, index) => (
                 <Link
@@ -205,7 +205,8 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </header>
+        </div>
+      </nav>
 
       {/* Mobile Menu Overlay */}
       <div

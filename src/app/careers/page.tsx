@@ -111,7 +111,7 @@ export default function CareersPage() {
                 <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
                     <Image src="/images/grid.svg" alt="" fill className="object-cover" />
                 </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-4">Join Our Team</p>
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-white tracking-tight mb-6 max-w-3xl">
                         Build the future of
@@ -136,7 +136,7 @@ export default function CareersPage() {
                 <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
                     <Image src="/images/grid.svg" alt="" fill className="object-cover" />
                 </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="mb-12">
                         <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-3">Open Positions</p>
                         <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight">
@@ -196,7 +196,7 @@ export default function CareersPage() {
 
             {/* Benefits */}
             <section className="relative py-24 overflow-hidden">
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="mb-12">
                         <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-3">Perks & Benefits</p>
                         <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight">
@@ -226,7 +226,7 @@ export default function CareersPage() {
                 <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
                     <Image src="/images/grid.svg" alt="" fill className="object-cover" />
                 </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="mb-12">
                         <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-3">How it works</p>
                         <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight">
@@ -257,7 +257,7 @@ export default function CareersPage() {
 
             {/* CTA */}
             <section className="py-24">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
                     <h2 className="text-4xl font-semibold text-white mb-4">Don&apos;t see a fit?</h2>
                     <p className="text-zinc-400 mb-8 max-w-lg mx-auto">
                         We&apos;re always looking for exceptional people. Send us your CV and tell us how you&apos;d add value to the team.

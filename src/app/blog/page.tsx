@@ -22,7 +22,7 @@ export default function BlogListingPage() {
             {/* Hero */}
             <section className="relative py-28 lg:py-36 overflow-hidden">
                 <GridOverlay opacity={10} />
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <SectionHeader
                         eyebrow="Our Blog"
                         title="Insights for builders"
@@ -34,7 +34,7 @@ export default function BlogListingPage() {
             {/* Featured Post */}
             {featuredPost && (
                 <section className="relative pb-24">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <div className="max-w-6xl mx-auto px-6 lg:px-8">
                         <Link
                             href={`/blog/${featuredPost.slug}`}
                             className="group flex flex-col lg:flex-row bg-zinc-900/30 border border-zinc-800 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-500"
@@ -78,7 +78,7 @@ export default function BlogListingPage() {
 
             {/* Post Grid */}
             <section className="relative pb-32">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {regularPosts.map((post) => (
                             <Link

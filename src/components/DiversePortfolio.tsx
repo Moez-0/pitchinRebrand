@@ -15,7 +15,7 @@ export default function DiversePortfolio() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4 tracking-tight">
@@ -53,7 +53,7 @@ export default function DiversePortfolio() {
       </div>
 
       {/* Bottom CTA - back in container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mt-16">
           <p className="text-sm text-zinc-500 tracking-wide uppercase mb-4">
             Join our global clientele

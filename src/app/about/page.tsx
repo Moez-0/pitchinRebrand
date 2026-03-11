@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
                     <Image src="/images/grid.svg" alt="" fill className="object-cover" />
                 </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="max-w-4xl">
                         <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-4">About Pitchin</p>
                         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-white tracking-tight mb-8 leading-tight">
@@ -74,7 +74,7 @@ export default function AboutPage() {
 
             {/* Mission Statement */}
             <section className="relative py-20 border-t border-zinc-800">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-4">Our Mission</p>
@@ -110,7 +110,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
                     <Image src="/images/grid.svg" alt="" fill className="object-cover" />
                 </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="mb-12">
                         <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-3">What We Stand For</p>
                         <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight">Our values</h2>
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
             {/* Team */}
             <section className="relative py-24 overflow-hidden">
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="mb-12">
                         <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-3">The People</p>
                         <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight">Meet the leadership</h2>
@@ -158,7 +158,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
                     <Image src="/images/grid.svg" alt="" fill className="object-cover" />
                 </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="mb-12">
                         <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-3">Our Story</p>
                         <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight">Company milestones</h2>
@@ -187,7 +187,7 @@ export default function AboutPage() {
 
             {/* CTA */}
             <section className="py-24 border-t border-zinc-800">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
                     <h2 className="text-4xl font-semibold text-white mb-4">Ready to work together?</h2>
                     <p className="text-zinc-400 mb-8 max-w-lg mx-auto">
                         Whether you need to build a product, scale a team, or transform your engineering, we&apos;re ready to help.

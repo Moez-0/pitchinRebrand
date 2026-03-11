@@ -45,7 +45,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 {/* Subtle top gradient */}
                 <div className="absolute top-0 inset-x-0 h-64 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="mb-8">
                         <Breadcrumb
                             items={[
@@ -78,7 +78,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </section>
 
             <section className="py-20 border-t border-zinc-800/50">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
                         {/* Left Col: Description & Tech */}

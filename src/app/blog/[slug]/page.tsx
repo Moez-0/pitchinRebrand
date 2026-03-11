@@ -109,7 +109,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* Read More Section */}
             <section className="py-24 bg-zinc-900/30 border-t border-zinc-800">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <h3 className="text-2xl font-semibold text-white mb-10 text-center">More from Pitchin</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {blogPosts.filter(p => p.slug !== post.slug).slice(0, 3).map((relatedPost) => (

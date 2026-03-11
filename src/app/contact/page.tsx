@@ -44,7 +44,7 @@ export default function ContactPage() {
                 <Image src="/images/grid.svg" alt="" fill className="object-cover" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
                 {/* Page Header */}
                 <div className="mb-16">
                     <p className="text-xs text-primary font-medium tracking-[0.2em] uppercase mb-3">
