@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: `${service.title} ${service.subtitle} | Pitchin`,
         description: service.description,
         alternates: {
-            canonical: `/services/${service.slug}`,
+            canonical: absoluteUrl(`/services/${service.slug}`),
         },
         openGraph: {
             type: "website",

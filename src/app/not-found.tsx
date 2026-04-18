@@ -1,6 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Page Not Found | Pitchin",
+    robots: {
+        index: false,
+        follow: false,
+    },
+};
+
 
 export default function NotFound() {
     return (

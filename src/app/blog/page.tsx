@@ -7,12 +7,12 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import GridOverlay from "@/components/ui/GridOverlay";
 import { formatDate } from "@/lib/utils";
 import { User } from "lucide-react";
-
+import { absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
     title: "Blog | Pitchin",
     description: "Insights, guides, and opinions on software engineering, product design, and tech agency culture.",
     alternates: {
-        canonical: "/blog",
+        canonical: absoluteUrl("/blog"),
     },
 };
 

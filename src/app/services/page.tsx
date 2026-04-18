@@ -5,12 +5,13 @@ import Link from "next/link";
 import { services } from "@/lib/services-data";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { ChevronRight } from "lucide-react";
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: "Services | Pitchin",
     description: "End-to-end software development services from MVP to enterprise scale. Staff augmentation, web development, mobile apps, and more.",
     alternates: {
-        canonical: "/services",
+        canonical: absoluteUrl("/services"),
     },
 };
 

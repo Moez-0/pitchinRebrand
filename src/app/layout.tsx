@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Pitchin", url: siteConfig.url }],
   creator: "Pitchin",
   publisher: "Pitchin",
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,

@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: `${study.company} Case Study | Pitchin`,
         description: study.tagline,
         alternates: {
-            canonical: `/case-studies/${study.slug}`,
+            canonical: absoluteUrl(`/case-studies/${study.slug}`),
         },
         openGraph: {
             type: "article",

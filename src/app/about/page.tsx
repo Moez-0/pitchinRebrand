@@ -5,12 +5,12 @@ import Link from "next/link";
 import { TeamMember } from "@/types";
 import { User } from "lucide-react";
 import { getServerLocale } from "@/lib/i18n/server";
-
+import { absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
     title: "About Us | Pitchin",
     description: "Meet the Pitchin team — a remote-first collective of engineers, designers, and strategists building people-first software.",
     alternates: {
-        canonical: "/about",
+        canonical: absoluteUrl("/about"),
     },
 };
 

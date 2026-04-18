@@ -5,12 +5,12 @@ import Link from "next/link";
 import { MapPin, Clock, Briefcase, ChevronRight } from "lucide-react";
 import { JobListing } from "@/types";
 import { getServerLocale } from "@/lib/i18n/server";
-
+import { absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
     title: "Careers | Pitchin",
     description: "Join the Pitchin team. We're hiring talented engineers, designers, and product managers who want to shape the future of software development.",
     alternates: {
-        canonical: "/careers",
+        canonical: absoluteUrl("/careers"),
     },
 };
 

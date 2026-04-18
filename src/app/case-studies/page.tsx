@@ -7,12 +7,12 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import GridOverlay from "@/components/ui/GridOverlay";
 import { getServerDictionary } from "@/lib/i18n/server";
 import { localizeCaseStudy } from "@/lib/i18n/case-studies";
-
+import { absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
     title: "Case Studies | Pitchin",
     description: "Explore our portfolio of successful software development projects across FinTech, EdTech, Healthcare, and E-commerce.",
     alternates: {
-        canonical: "/case-studies",
+        canonical: absoluteUrl("/case-studies"),
     },
 };
 

@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-
+import { absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
     title: "Terms & Conditions | Pitchin",
     description: "Terms and conditions for Pitchin software development services.",
     alternates: {
-        canonical: "/legal/terms",
+        canonical: absoluteUrl("/legal/terms"),
     },
 };
 

@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-
+import { absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
     title: "GDPR Compliance | Pitchin",
     description: "Information regarding Pitchin's compliance with the General Data Protection Regulation.",
     alternates: {
-        canonical: "/legal/gdpr",
+        canonical: absoluteUrl("/legal/gdpr"),
     },
 };
 

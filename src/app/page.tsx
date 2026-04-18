@@ -9,12 +9,14 @@ import Testimonials from "@/components/Testimonials";
 import DiversePortfolio from "@/components/DiversePortfolio";
 import FAQ from "@/components/FAQ";
 
+import { absoluteUrl } from "@/lib/seo";
+
 export const metadata: Metadata = {
   title: "Pitchin | Build Fast, Scale Smart",
   description:
     "Software development and digital marketing agency for startups and enterprises. Build MVPs, scale products, and grow organic traffic.",
   alternates: {
-    canonical: "/",
+    canonical: absoluteUrl("/"),
   },
 };
 

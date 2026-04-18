@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Mail, MapPin, Linkedin } from "lucide-react";
 import { getServerLocale } from "@/lib/i18n/server";
-
+import { absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
     title: "Contact Us | Pitchin",
     description: "Get in touch with Pitchin. Let's discuss your project and get you a free quote.",
     alternates: {
-        canonical: "/contact",
+        canonical: absoluteUrl("/contact"),
     },
 };
 
