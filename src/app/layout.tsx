@@ -65,6 +65,13 @@ export const metadata: Metadata = {
         alt: "Pitchin — Build Fast, Scale Smart",
         type: "image/png",
       },
+      {
+        url: absoluteUrl("/og/og-square.png"),
+        width: 1080,
+        height: 1080,
+        alt: "Pitchin Square Logo",
+        type: "image/png",
+      },
     ],
   },
   // Twitter / X card
