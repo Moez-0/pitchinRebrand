@@ -1,0 +1,53 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0f0518"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="20%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#6D28D9" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#6D28D9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6D28D9" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#6D28D9" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGrad)"/>
+  <ellipse cx="180" cy="300" rx="320" ry="280" fill="url(#glowGrad)"/>
+
+  <!-- Top / bottom accent -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accentLine)"/>
+  <rect x="0" y="597" width="1200" height="3" fill="url(#accentLine)"/>
+
+  <!-- Vertical divider between logo area and text -->
+  <rect x="340" y="140" width="1.5" height="320" fill="#6D28D9" opacity="0.25"/>
+
+  <!-- Logo mark — centered in left panel (~160px wide) -->
+  <g transform="translate(80, 165) scale(0.6)">
+    <path d="M159.813 191.557C171.245 189.299 178.343 176.297 175.633 162.579C174.333 155.993 170.979 150.468 166.609 146.704L180.46 92.3401C181.388 92.3119 182.323 92.3169 183.263 92.1313C194.694 89.8732 201.793 76.8719 199.083 63.1537C196.373 49.4354 184.865 40.1092 173.433 42.3672C162.001 44.6253 154.903 57.6266 157.613 71.3448C158.914 77.9303 162.267 83.4553 166.637 87.2198L152.793 141.582C151.858 141.612 150.924 141.607 149.984 141.793C149.044 141.978 148.181 142.338 147.305 142.666L113.832 97.6499C116.443 92.5066 117.444 86.1215 116.143 79.536C113.433 65.8178 101.925 56.4916 90.4931 58.7496C79.0611 61.0077 71.9631 74.0089 74.6727 87.7272C77.3824 101.446 88.8906 110.772 100.322 108.514C101.262 108.328 102.125 107.968 103.001 107.64L136.474 152.656C133.864 157.8 132.863 164.185 134.163 170.77C136.873 184.488 148.381 193.815 159.813 191.557Z" fill="#6D28D9"/>
+    <path d="M90.4931 58.7496C101.925 56.4916 113.433 65.8178 116.143 79.536C117.444 86.1215 116.443 92.5066 113.832 97.6499L147.312 142.665C148.181 142.338 149.044 141.978 149.984 141.793C161.416 139.534 172.924 148.861 175.633 162.579C178.343 176.297 171.245 189.299 159.813 191.557C148.381 193.815 136.873 184.488 134.163 170.77C132.863 164.185 133.864 157.8 136.474 152.656L103.001 107.64C102.125 107.968 101.262 108.328 100.322 108.514C99.3825 108.699 98.4479 108.694 97.513 108.724L83.6691 163.086C88.0392 166.851 91.3926 172.376 92.6934 178.961C95.403 192.68 88.305 205.681 76.8731 207.939C65.4412 210.197 53.933 200.871 51.2233 187.153C48.5137 173.434 55.6117 160.433 67.0436 158.175C67.9836 157.989 68.9182 157.994 69.8531 157.965L83.6971 103.602C79.3269 99.8377 75.9735 94.3127 74.6728 87.7272C71.9631 74.0089 79.0612 61.0077 90.4931 58.7496Z" fill="#6D28D9"/>
+  </g>
+
+  <!-- Right panel text content -->
+  <text x="380" y="255" font-family="'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', sans-serif" font-weight="700" font-size="100" fill="#ffffff" letter-spacing="-3">Pitchin</text>
+  <text x="384" y="318" font-family="'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', sans-serif" font-weight="400" font-size="32" fill="#9999b0" letter-spacing="0.5">Build Fast, Scale Smart</text>
+
+  <!-- Descriptor tags -->
+  <g transform="translate(384, 360)">
+    <!-- Tag 1 -->
+    <rect x="0" y="0" width="196" height="36" rx="18" fill="#6D28D9" opacity="0.12"/>
+    <rect x="0" y="0" width="196" height="36" rx="18" fill="none" stroke="#6D28D9" stroke-width="1" opacity="0.35"/>
+    <text x="98" y="24" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="14" font-weight="600" fill="#9B59F5" text-anchor="middle" letter-spacing="0.8">SOFTWARE DEV</text>
+    <!-- Tag 2 -->
+    <rect x="212" y="0" width="218" height="36" rx="18" fill="#6D28D9" opacity="0.12"/>
+    <rect x="212" y="0" width="218" height="36" rx="18" fill="none" stroke="#6D28D9" stroke-width="1" opacity="0.35"/>
+    <text x="321" y="24" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="14" font-weight="600" fill="#9B59F5" text-anchor="middle" letter-spacing="0.8">DIGITAL MARKETING</text>
+  </g>
+
+  <!-- URL -->
+  <text x="384" y="470" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="22" font-weight="500" fill="#6D28D9" opacity="0.8" letter-spacing="0.5">pitchin.mobi</text>
+</svg>
